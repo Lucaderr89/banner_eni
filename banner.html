@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #fff; }
+
+    /* Cornice fissa 750x150 come da specifiche del giornale */
+    .carousel { position: relative; width: 750px; height: 150px; }
+
+    /* Ogni banner e' sovrapposto agli altri e sfuma in dissolvenza */
+    .carousel a {
+      position: absolute; top: 0; left: 0;
+      width: 750px; height: 150px;
+      display: block;
+      opacity: 0;
+      transition: opacity .6s ease-in-out;
+      pointer-events: none;            /* i banner non attivi non catturano i click */
+    }
+    .carousel a.active {
+      opacity: 1;
+      pointer-events: auto;            /* solo quello visibile e' cliccabile */
+    }
+
+    .carousel img { width: 750px; height: 150px; display: block; border: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="carousel">
+    <!-- ====== I 4 BANNER ======
+         Per cambiare la DESTINAZIONE di un banner, modifica il link dentro href="..."
+         Per cambiare l'IMMAGINE, sostituisci il file (es. banner1.jpg) mantenendo lo stesso nome. -->
+
+    <a class="active" href="inaugurazione.html" target="_blank" rel="noopener">
+      <img src="banner1.jpg" alt="Eni Caffe - banner 1">
+    </a>
+
+    <a href="inaugurazione.html" target="_blank" rel="noopener">
+      <img src="banner2.jpg" alt="Eni Caffe - banner 2">
+    </a>
+
+    <a href="inaugurazione.html" target="_blank" rel="noopener">
+      <img src="banner3.jpg" alt="Eni Caffe - banner 3">
+    </a>
+
+    <a href="inaugurazione.html" target="_blank" rel="noopener">
+      <img src="banner4.jpg" alt="Eni Caffe - banner 4">
+    </a>
+  </div>
+
+  <script>
+    // Cambia banner ogni 3 secondi (3000 millisecondi)
+    var slides = document.querySelectorAll('.carousel a');
+    var i = 0;
+    setInterval(function () {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 3000);
+  </script>
+
+</body>
+</html>

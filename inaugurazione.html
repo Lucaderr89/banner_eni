@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inaugurazione Eni Caffè — 24 giugno 2026</title>
+
+  <!-- Font display condensato, coerente con il lettering dei banner -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark:       #15100a;   /* fondo scuro caldo, come i banner neri  */
+      --dark-2:     #1f1810;   /* riquadri/card                          */
+      --gold:       #f2b705;   /* oro/giallo Eni (accento)               */
+      --gold-soft:  #ffd24d;   /* oro chiaro per dettagli                */
+      --cream:      #f6f1e6;   /* testo principale                       */
+      --muted:      #c4b89e;   /* testo secondario                       */
+      --line:       rgba(242,183,5,.25);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background-color: #100b06;   /* base scura: nessun bordo chiaro, mai */
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: #100b06;   /* fallback solido sotto i gradienti */
+      background-image:
+        radial-gradient(1200px 600px at 50% -10%, rgba(242,183,5,.12), transparent 60%),
+        linear-gradient(180deg, #1a130a 0%, var(--dark) 55%, #100b06 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;   /* il gradiente copre sempre tutta la finestra */
+      color: var(--cream);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: clamp(28px, 6vw, 64px) 20px 56px;
+      text-align: center;
+    }
+
+    /* ---- Immagine/logo (uno dei 4 banner) ---- */
+    .hero {
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      display: block;
+      margin: 0 auto clamp(28px, 5vw, 44px);
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+
+    /* ---- Testata ---- */
+    .eyebrow {
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      font-size: clamp(.72rem, 2.6vw, .9rem);
+      color: var(--gold);
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      line-height: .98;
+      font-size: clamp(2.4rem, 11vw, 4.4rem);
+      margin: 0 0 14px;
+      color: var(--cream);
+    }
+    h1 span { color: var(--gold); }
+
+    .lead {
+      max-width: 30em;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 3.4vw, 1.18rem);
+    }
+
+    /* ---- Separatore oro ---- */
+    .divider {
+      width: 64px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+      margin: clamp(30px, 6vw, 44px) auto;
+    }
+
+    /* ---- Data e ora ---- */
+    .when { text-align: center; }
+    .when .date {
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--cream);
+      font-size: clamp(1.35rem, 5.6vw, 2.15rem);
+      margin: 0;
+    }
+    .when .time {
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      color: var(--gold);
+      font-size: clamp(2.1rem, 9vw, 3.1rem);
+      letter-spacing: .04em;
+      line-height: 1;
+      margin: 12px 0 0;
+    }
+
+    /* ---- Messaggio ---- */
+    .message {
+      max-width: 34em;
+      margin: clamp(34px, 6vw, 48px) auto 0;
+      color: var(--cream);
+      font-size: clamp(1rem, 3.2vw, 1.12rem);
+    }
+
+    /* ---- Dove ---- */
+    .place {
+      margin-top: clamp(30px, 5vw, 40px);
+    }
+    .place .label {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      font-size: .75rem;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .place .addr {
+      font-size: 1.1rem;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+    .place .maps {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: var(--gold);
+      color: #15100a;
+      text-decoration: none;
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .85rem;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .place .maps:hover {
+      background: var(--gold-soft);
+      transform: translateY(-1px);
+    }
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Immagine principale: uno dei 4 banner, così si vede il logo Eni Caffe.
+         Per cambiarla, sostituisci con banner2.jpg / banner3.jpg / banner4.jpg -->
+    <img class="hero" src="banner1.jpg" alt="Eni Caffè">
+
+    <p class="eyebrow">È arrivato</p>
+    <h1>Eni <span>Caffè</span></h1>
+    <p class="lead">Vi invitiamo all'inaugurazione del nostro nuovo locale.</p>
+
+    <div class="divider"></div>
+
+    <section class="when">
+      <p class="date">Mercoledì 24 Giugno 2026</p>
+      <p class="time">Ore 16:30</p>
+    </section>
+
+    <p class="message">
+      Un nuovo spazio dedicato al piacere del caffè: espresso di qualità,
+      colazioni e pause golose dal mattino alla sera, in un ambiente curato
+      e accogliente. Vieni a festeggiare con noi il primo giorno: ti aspettiamo.
+    </p>
+
+    <div class="place">
+      <div class="label">Dove</div>
+      <div class="addr">
+        Stazione Eni — Via Ventotto Luglio 105<br>
+        47893 Borgo Maggiore, San Marino
+      </div>
+      <a class="maps"
+         href="https://www.google.com/maps/search/?api=1&amp;query=Stazione+Eni+Via+Ventotto+Luglio+105+47893+Borgo+Maggiore+San+Marino"
+         target="_blank" rel="noopener">Come raggiungerci</a>
+    </div>
+
+  </main>
+</body>
+</html>
