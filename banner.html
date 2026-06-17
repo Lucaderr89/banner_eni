@@ -2,16 +2,24 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body { margin: 0; padding: 0; overflow: hidden; background: #fff; }
 
-    /* Cornice fissa 750x150 come da specifiche del giornale */
-    .carousel { position: relative; width: 750px; height: 150px; }
+    /* Cornice responsive: parte da 750x150 ma si adatta a iframe piu' stretti
+       mantenendo le proporzioni (750/150 = 5/1) */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 750px;
+      aspect-ratio: 5 / 1;
+      margin: 0 auto;
+    }
 
     /* Ogni banner e' sovrapposto agli altri e sfuma in dissolvenza */
     .carousel a {
       position: absolute; top: 0; left: 0;
-      width: 750px; height: 150px;
+      width: 100%; height: 100%;
       display: block;
       opacity: 0;
       transition: opacity .6s ease-in-out;
@@ -22,7 +30,7 @@
       pointer-events: auto;            /* solo quello visibile e' cliccabile */
     }
 
-    .carousel img { width: 750px; height: 150px; display: block; border: 0; }
+    .carousel img { width: 100%; height: 100%; display: block; border: 0; }
   </style>
 </head>
 <body>
